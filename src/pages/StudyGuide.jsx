@@ -5,196 +5,135 @@ import { ChevronDownIcon, ChevronUpIcon, BookOpenIcon } from '@heroicons/react/2
 const studyTopics = [
   {
     id: 'cloud-concepts',
-    title: 'Conceptos de la nube (20-25%)',
-    description: 'Fundamentos y beneficios del cloud computing.',
+    title: 'Descripción de los conceptos de la nube (25-30%)',
+    description: 'Fundamentos de la computación en la nube y sus ventajas.',
     modules: [
       {
-        title: 'Beneficios de la nube',
+        title: 'Conceptos fundamentales',
         items: [
-          'Alta disponibilidad',
-          'Escalabilidad',
-          'Elasticidad',
-          'Agilidad',
-          'Recuperación ante desastres'
-        ]
-      },
-      {
-        title: 'Modelos de servicio en la nube',
-        items: [
-          'IaaS (Infraestructura como Servicio)',
-          'PaaS (Plataforma como Servicio)',
-          'SaaS (Software como Servicio)',
-          'Comparación de modelos'
-        ]
-      },
-      {
-        title: 'Tipos de nubes',
-        items: [
-          'Nube pública',
-          'Nube privada',
-          'Nube híbrida',
-          'Ventajas y desventajas de cada tipo'
-        ]
-      },
-      {
-        title: 'Modelo de Responsabilidad Compartida',
-        items: [
-          'Responsabilidades del proveedor',
-          'Responsabilidades del cliente',
-          'Variación por modelo de servicio'
+          'Definición de informática en la nube',
+          'Modelo de responsabilidad compartida',
+          'Modelos de nube: públicos, privados e híbridos',
+          'Casos de uso por modelo de nube',
+          'Modelo basado en consumo',
+          'Modelos de precios en la nube',
+          'Informática sin servidor'
         ],
         highlighted: true,
         link: '/responsibility-model'
+      },
+      {
+        title: 'Ventajas de la nube',
+        items: [
+          'Alta disponibilidad y escalabilidad',
+          'Confiabilidad y previsibilidad',
+          'Seguridad y gobernanza',
+          'Capacidad de administración'
+        ]
+      },
+      {
+        title: 'Tipos de servicio en la nube',
+        items: [
+          'Infraestructura como servicio (IaaS)',
+          'Plataforma como servicio (PaaS)',
+          'Software como servicio (SaaS)',
+          'Casos de uso según el tipo de servicio'
+        ]
       }
     ]
   },
   {
-    id: 'core-services',
-    title: 'Servicios principales de Azure (15-20%)',
-    description: 'Recursos y servicios fundamentales disponibles en Azure.',
+    id: 'azure-architecture-services',
+    title: 'Descripción de la arquitectura y los servicios de Azure (35-40%)',
+    description: 'Componentes y servicios esenciales en Azure.',
     modules: [
       {
-        title: 'Componentes arquitectónicos de Azure',
+        title: 'Componentes arquitectónicos',
         items: [
-          'Regiones y pares de regiones',
+          'Regiones, pares de regiones y regiones soberanas',
           'Zonas de disponibilidad',
-          'Grupos de recursos',
+          'Centros de datos',
+          'Recursos y grupos de recursos',
           'Suscripciones',
           'Grupos de administración',
-          'Azure Resource Manager'
+          'Jerarquía de recursos y administración'
         ]
       },
       {
-        title: 'Recursos de proceso y red',
+        title: 'Servicios de proceso y red',
         items: [
-          'Máquinas virtuales',
-          'Azure App Service',
-          'Azure Container Instances',
-          'Azure Kubernetes Service',
-          'Redes virtuales',
-          'VPN Gateway',
-          'Azure ExpressRoute'
+          'Tipos de proceso: contenedores, máquinas virtuales y funciones',
+          'Opciones de máquina virtual',
+          'Recursos necesarios para VMs',
+          'Hospedaje de aplicaciones: aplicaciones web, contenedores, VMs',
+          'Redes virtuales: Virtual Networks, subredes, emparejamiento, DNS, VPN Gateway, ExpressRoute',
+          'Puntos de conexión públicos y privados'
         ]
       },
       {
-        title: 'Almacenamiento y bases de datos',
+        title: 'Servicios de almacenamiento',
         items: [
-          'Cuentas de almacenamiento',
-          'Azure Blob Storage',
-          'Azure Files',
-          'Azure Cosmos DB',
-          'Azure SQL Database',
-          'Azure Database for MySQL',
-          'Azure Database for PostgreSQL'
+          'Comparación de servicios de almacenamiento',
+          'Niveles de almacenamiento',
+          'Opciones de redundancia',
+          'Tipos de cuenta de almacenamiento',
+          'Movimiento de archivos: AzCopy, Storage Explorer, Azure File Sync',
+          'Opciones de migración: Azure Migrate y Azure Data Box'
+        ]
+      },
+      {
+        title: 'Identidad, acceso y seguridad',
+        items: [
+          'Servicios de directorio: Microsoft Entra ID y Domain Services',
+          'Autenticación: SSO, MFA, autenticación sin contraseña',
+          'Identidades externas: B2B y B2C',
+          'Acceso condicional (Microsoft Entra)',
+          'RBAC (Control de acceso basado en roles)',
+          'Confianza cero',
+          'Modelo de defensa en profundidad',
+          'Microsoft Defender for Cloud'
         ]
       }
     ]
   },
   {
-    id: 'management-tools',
-    title: 'Soluciones principales y herramientas de administración (10-15%)',
-    description: 'Herramientas para gestionar y trabajar con Azure.',
+    id: 'management-governance',
+    title: 'Descripción de la administración y la gobernanza de Azure (30-35%)',
+    description: 'Administración de costos, gobernanza, cumplimiento y supervisión en Azure.',
     modules: [
       {
-        title: 'Herramientas de administración de Azure',
+        title: 'Administración de costos',
         items: [
-          'Portal de Azure',
-          'Azure PowerShell',
-          'CLI de Azure',
-          'Azure Cloud Shell',
+          'Factores que afectan costos',
+          'Calculadora de precios vs. calculadora de TCO',
+          'Funcionalidades de Azure Cost Management',
+          'Etiquetas de recursos'
+        ]
+      },
+      {
+        title: 'Gobernanza y cumplimiento',
+        items: [
+          'Microsoft Purview en Azure',
+          'Azure Policy',
+          'Bloqueos de recursos'
+        ]
+      },
+      {
+        title: 'Administración e implementación de recursos',
+        items: [
+          'Azure Portal',
+          'Azure Cloud Shell: CLI y PowerShell',
+          'Azure Arc',
+          'Infraestructura como código (IaC)',
+          'Plantillas ARM'
+        ]
+      },
+      {
+        title: 'Supervisión',
+        items: [
           'Azure Advisor',
-          'ARM Templates'
-        ]
-      },
-      {
-        title: 'Herramientas de supervisión',
-        items: [
-          'Azure Monitor',
           'Azure Service Health',
-          'Azure Application Insights'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'security',
-    title: 'Características de seguridad general y de red (10-15%)',
-    description: 'Servicios para proteger los recursos e infraestructuras en Azure.',
-    modules: [
-      {
-        title: 'Herramientas de seguridad',
-        items: [
-          'Azure Security Center',
-          'Azure Sentinel',
-          'Azure Key Vault',
-          'Azure DDoS Protection'
-        ]
-      },
-      {
-        title: 'Seguridad de red',
-        items: [
-          'Grupos de seguridad de red (NSG)',
-          'Firewall de Azure',
-          'Configuraciones de red seguras'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'identity',
-    title: 'Identidad, gobernanza, privacidad y cumplimiento (15-20%)',
-    description: 'Gestión de identidades y cumplimiento normativo en Azure.',
-    modules: [
-      {
-        title: 'Servicios de identidad',
-        items: [
-          'Azure Active Directory',
-          'Autenticación multifactor',
-          'Acceso condicional',
-          'Control de acceso basado en roles (RBAC)'
-        ]
-      },
-      {
-        title: 'Gobernanza',
-        items: [
-          'Políticas de Azure',
-          'Bloqueos de recursos',
-          'Etiquetas de recursos',
-          'Azure Blueprints'
-        ]
-      },
-      {
-        title: 'Privacidad y cumplimiento',
-        items: [
-          'Centro de confianza de Microsoft',
-          'Términos de servicios en línea (OST)',
-          'Declaración de privacidad de Microsoft',
-          'Documentación de cumplimiento normativo'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'cost-sla',
-    title: 'Gestión de costos y SLA (10-15%)',
-    description: 'Precios, costos y acuerdos de nivel de servicio en Azure.',
-    modules: [
-      {
-        title: 'Planificación y gestión de costos',
-        items: [
-          'Calculadora de precios',
-          'Calculadora de TCO',
-          'Opciones de compra de Azure',
-          'Azure Cost Management'
-        ]
-      },
-      {
-        title: 'Acuerdos de nivel de servicio (SLA)',
-        items: [
-          'Definición de SLA en Azure',
-          'Niveles de servicio para servicios específicos',
-          'Cálculo de SLA compuesto',
-          'Mejora de SLA de aplicaciones'
+          'Azure Monitor: Log Analytics, alertas, Application Insights'
         ]
       }
     ]
@@ -208,8 +147,7 @@ export default function StudyGuide() {
       
       <div className="mb-6 bg-azure-50 p-4 rounded-lg">
         <p className="text-gray-700">
-          Esta guía sigue el esquema oficial del examen AZ-900. Explora cada sección para profundizar
-          en los conceptos clave que debes conocer para aprobar la certificación.
+          Esta guía sigue el esquema oficial del examen AZ-900 actualizado a partir del 23 de enero de 2024. Explora cada sección para profundizar en los conceptos clave que debes conocer para aprobar la certificación.
         </p>
       </div>
       
@@ -222,10 +160,9 @@ export default function StudyGuide() {
       <div className="mt-12 p-6 bg-gradient-to-r from-azure-500 to-azure-700 rounded-lg text-white">
         <h2 className="text-xl font-semibold mb-4">Enfoque de estudio recomendado</h2>
         <ol className="list-decimal pl-6 space-y-2">
-          <li>Comienza con los <strong>Conceptos de la nube</strong> para entender los fundamentos.</li>
-          <li>Familiarízate con los <strong>Servicios principales de Azure</strong> y su funcionamiento.</li>
-          <li>Aprende a usar las <strong>herramientas de administración</strong> para gestionar recursos.</li>
-          <li>Comprende en profundidad el <strong>Modelo de Responsabilidad Compartida</strong>.</li>
+          <li>Comienza con la <strong>Descripción de los conceptos de la nube</strong> para entender los fundamentos.</li>
+          <li>Familiarízate con la <strong>Descripción de la arquitectura y los servicios de Azure</strong> y su funcionamiento.</li>
+          <li>Aprende a usar las <strong>herramientas de administración y gobernanza</strong> para gestionar recursos.</li>
           <li>Realiza pruebas de práctica para identificar áreas de mejora.</li>
         </ol>
       </div>
@@ -235,10 +172,10 @@ export default function StudyGuide() {
 
 function TopicAccordion({ topic }) {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   return (
     <div className="border border-gray-200 rounded-lg overflow-hidden">
-      <button 
+      <button
         className="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -252,13 +189,13 @@ function TopicAccordion({ topic }) {
           <ChevronDownIcon className="h-5 w-5 text-azure-600" />
         )}
       </button>
-      
+
       {isOpen && (
         <div className="p-4 bg-gray-50 border-t border-gray-200">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {topic.modules.map((module, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`p-4 rounded-lg bg-white shadow-sm ${
                   module.highlighted ? 'border-2 border-azure-400' : ''
                 }`}
@@ -266,8 +203,8 @@ function TopicAccordion({ topic }) {
                 <div className="flex justify-between items-start">
                   <h3 className="text-md font-medium text-gray-900">{module.title}</h3>
                   {module.link && (
-                    <Link 
-                      to={module.link} 
+                    <Link
+                      to={module.link}
                       className="flex items-center text-sm text-azure-600 hover:text-azure-800"
                     >
                       <BookOpenIcon className="h-4 w-4 mr-1" />

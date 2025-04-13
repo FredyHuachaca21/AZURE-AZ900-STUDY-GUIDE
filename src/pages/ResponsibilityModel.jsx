@@ -70,9 +70,9 @@ function InteractiveView() {
       id: 'customer',
       title: 'Responsabilidad siempre retenida por el cliente',
       items: [
-        'Información y datos',
-        'Dispositivos (Móviles y PCs)',
-        'Cuentas e identidades'
+        'La información y los datos almacenados en la nube.',
+        'Los dispositivos que pueden conectarse a la nube (teléfonos móviles, equipos, etc.).',
+        'Las cuentas e identidades de las personas, servicios y dispositivos de la organización'
       ],
       color: 'bg-yellow-50 border-yellow-200',
       description: 'Sin importar el modelo de servicio en la nube, el cliente siempre mantiene la responsabilidad sobre estos elementos.'

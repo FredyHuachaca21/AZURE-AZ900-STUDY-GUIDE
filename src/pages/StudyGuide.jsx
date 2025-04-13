@@ -1,163 +1,60 @@
+// Ruta: /src/pages/StudyGuide.jsx
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDownIcon, ChevronUpIcon, BookOpenIcon } from '@heroicons/react/24/outline';
-
-const studyTopics = [
-  {
-    id: 'cloud-concepts',
-    title: 'Descripción de los conceptos de la nube (25-30%)',
-    description: 'Fundamentos de la computación en la nube y sus ventajas.',
-    modules: [
-      {
-        title: 'Conceptos fundamentales',
-        items: [
-          'Definición de informática en la nube',
-          'Modelo de responsabilidad compartida',
-          'Modelos de nube: públicos, privados e híbridos',
-          'Casos de uso por modelo de nube',
-          'Modelo basado en consumo',
-          'Modelos de precios en la nube',
-          'Informática sin servidor'
-        ],
-        highlighted: true,
-        link: '/responsibility-model'
-      },
-      {
-        title: 'Ventajas de la nube',
-        items: [
-          'Alta disponibilidad y escalabilidad',
-          'Confiabilidad y previsibilidad',
-          'Seguridad y gobernanza',
-          'Capacidad de administración'
-        ]
-      },
-      {
-        title: 'Tipos de servicio en la nube',
-        items: [
-          'Infraestructura como servicio (IaaS)',
-          'Plataforma como servicio (PaaS)',
-          'Software como servicio (SaaS)',
-          'Casos de uso según el tipo de servicio'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'azure-architecture-services',
-    title: 'Descripción de la arquitectura y los servicios de Azure (35-40%)',
-    description: 'Componentes y servicios esenciales en Azure.',
-    modules: [
-      {
-        title: 'Componentes arquitectónicos',
-        items: [
-          'Regiones, pares de regiones y regiones soberanas',
-          'Zonas de disponibilidad',
-          'Centros de datos',
-          'Recursos y grupos de recursos',
-          'Suscripciones',
-          'Grupos de administración',
-          'Jerarquía de recursos y administración'
-        ]
-      },
-      {
-        title: 'Servicios de proceso y red',
-        items: [
-          'Tipos de proceso: contenedores, máquinas virtuales y funciones',
-          'Opciones de máquina virtual',
-          'Recursos necesarios para VMs',
-          'Hospedaje de aplicaciones: aplicaciones web, contenedores, VMs',
-          'Redes virtuales: Virtual Networks, subredes, emparejamiento, DNS, VPN Gateway, ExpressRoute',
-          'Puntos de conexión públicos y privados'
-        ]
-      },
-      {
-        title: 'Servicios de almacenamiento',
-        items: [
-          'Comparación de servicios de almacenamiento',
-          'Niveles de almacenamiento',
-          'Opciones de redundancia',
-          'Tipos de cuenta de almacenamiento',
-          'Movimiento de archivos: AzCopy, Storage Explorer, Azure File Sync',
-          'Opciones de migración: Azure Migrate y Azure Data Box'
-        ]
-      },
-      {
-        title: 'Identidad, acceso y seguridad',
-        items: [
-          'Servicios de directorio: Microsoft Entra ID y Domain Services',
-          'Autenticación: SSO, MFA, autenticación sin contraseña',
-          'Identidades externas: B2B y B2C',
-          'Acceso condicional (Microsoft Entra)',
-          'RBAC (Control de acceso basado en roles)',
-          'Confianza cero',
-          'Modelo de defensa en profundidad',
-          'Microsoft Defender for Cloud'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'management-governance',
-    title: 'Descripción de la administración y la gobernanza de Azure (30-35%)',
-    description: 'Administración de costos, gobernanza, cumplimiento y supervisión en Azure.',
-    modules: [
-      {
-        title: 'Administración de costos',
-        items: [
-          'Factores que afectan costos',
-          'Calculadora de precios vs. calculadora de TCO',
-          'Funcionalidades de Azure Cost Management',
-          'Etiquetas de recursos'
-        ]
-      },
-      {
-        title: 'Gobernanza y cumplimiento',
-        items: [
-          'Microsoft Purview en Azure',
-          'Azure Policy',
-          'Bloqueos de recursos'
-        ]
-      },
-      {
-        title: 'Administración e implementación de recursos',
-        items: [
-          'Azure Portal',
-          'Azure Cloud Shell: CLI y PowerShell',
-          'Azure Arc',
-          'Infraestructura como código (IaC)',
-          'Plantillas ARM'
-        ]
-      },
-      {
-        title: 'Supervisión',
-        items: [
-          'Azure Advisor',
-          'Azure Service Health',
-          'Azure Monitor: Log Analytics, alertas, Application Insights'
-        ]
-      }
-    ]
-  }
-];
+import { 
+  ChevronDownIcon, 
+  ChevronUpIcon, 
+  BookOpenIcon,
+  ArrowRightIcon,
+  CheckCircleIcon,
+  AcademicCapIcon
+} from '@heroicons/react/24/outline';
+import { examCategories } from '../config/navigationConfig';
 
 export default function StudyGuide() {
   return (
     <div className="max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold text-azure-700 mb-6">Guía de Estudio para AZ-900</h1>
+      <div className="flex items-center space-x-3 mb-6">
+        <AcademicCapIcon className="h-8 w-8 text-azure-600 dark:text-azure-400" />
+        <h1 className="text-3xl font-bold text-azure-700 dark:text-azure-400">Guía de Estudio para AZ-900</h1>
+      </div>
       
-      <div className="mb-6 bg-azure-50 p-4 rounded-lg">
-        <p className="text-gray-700">
-          Esta guía sigue el esquema oficial del examen AZ-900 actualizado a partir del 23 de enero de 2024. Explora cada sección para profundizar en los conceptos clave que debes conocer para aprobar la certificación.
+      <div className="mb-8 bg-azure-50 dark:bg-azure-900/20 p-6 rounded-xl border border-azure-100 dark:border-azure-800 transition-colors">
+        <h2 className="text-xl font-semibold text-azure-700 dark:text-azure-400 mb-4">Estructura del Examen</h2>
+        <p className="text-gray-700 dark:text-gray-300 mb-4">
+          Esta guía sigue el esquema oficial del examen AZ-900 actualizado a partir de enero de 2024. 
+          Los temas están organizados según las tres categorías principales evaluadas en la certificación:
         </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+          {examCategories.map((category) => (
+            <div 
+              key={category.id}
+              className="bg-white dark:bg-gray-800 rounded-lg p-4 border-l-4 border border-gray-200 dark:border-gray-700 transition-colors"
+              style={{ borderLeftColor: `rgb(${category.id === 'cloud-concepts' ? '79, 70, 229' : 
+                                               category.id === 'azure-architecture' ? '2, 132, 199' : 
+                                               '5, 150, 105'})` }}
+            >
+              <div className="flex justify-between items-start">
+                <category.icon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+                <span className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs font-medium px-2 py-1 rounded-full">
+                  {category.percentage}
+                </span>
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mt-2">{category.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{category.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
       
       <div className="space-y-6">
-        {studyTopics.map((topic) => (
-          <TopicAccordion key={topic.id} topic={topic} />
+        {examCategories.map((category) => (
+          <TopicAccordion key={category.id} category={category} />
         ))}
       </div>
       
-      <div className="mt-12 p-6 bg-gradient-to-r from-azure-500 to-azure-700 rounded-lg text-white">
+      <div className="mt-12 p-6 bg-gradient-to-r from-azure-500 to-azure-700 dark:from-azure-600 dark:to-azure-800 rounded-lg text-white">
         <h2 className="text-xl font-semibold mb-4">Enfoque de estudio recomendado</h2>
         <ol className="list-decimal pl-6 space-y-2">
           <li>Comienza con la <strong>Descripción de los conceptos de la nube</strong> para entender los fundamentos.</li>
@@ -165,66 +62,184 @@ export default function StudyGuide() {
           <li>Aprende a usar las <strong>herramientas de administración y gobernanza</strong> para gestionar recursos.</li>
           <li>Realiza pruebas de práctica para identificar áreas de mejora.</li>
         </ol>
+        
+        <div className="mt-6 pt-6 border-t border-azure-400 dark:border-azure-500">
+          <div className="flex items-start">
+            <CheckCircleIcon className="h-6 w-6 text-white mr-3 flex-shrink-0" />
+            <p>
+              Utiliza el <Link to="/exam-simulation" className="text-white font-medium underline">simulador de examen</Link> para poner 
+              a prueba tus conocimientos en cada categoría o en un examen completo.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div className="mt-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700 transition-colors">
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Seguimiento de progreso</h2>
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
+          A medida que estudies cada tema, puedes marcar tu progreso para mantener un seguimiento de tu preparación.
+          Esto te ayudará a identificar las áreas que necesitan más atención antes del examen.
+        </p>
+        
+        <div className="flex justify-center">
+          <Link 
+            to="/cloud-concepts/what-is-cloud" 
+            className="btn btn-primary px-6 py-3 flex items-center"
+          >
+            Comenzar con los conceptos fundamentales
+            <ArrowRightIcon className="h-5 w-5 ml-2" />
+          </Link>
+        </div>
       </div>
     </div>
   );
 }
 
-function TopicAccordion({ topic }) {
+function TopicAccordion({ category }) {
   const [isOpen, setIsOpen] = useState(false);
+  
+  // Agrupamos los temas por módulos basados en la estructura del examen
+  const groupTopicsByModule = () => {
+    // Esta es una representación simplificada de cómo podrían agruparse los temas
+    // Se puede adaptar según sea necesario para la estructura específica
+    
+    if (category.id === 'cloud-concepts') {
+      return [
+        {
+          title: 'Conceptos fundamentales',
+          items: category.topics.slice(0, 6).map(topic => ({
+            name: topic.title,
+            path: topic.path
+          })),
+          highlighted: true
+        },
+        {
+          title: 'Ventajas y tipos de servicio',
+          items: category.topics.slice(6).map(topic => ({
+            name: topic.title,
+            path: topic.path
+          }))
+        }
+      ];
+    } 
+    else if (category.id === 'azure-architecture') {
+      return [
+        {
+          title: 'Componentes arquitectónicos',
+          items: [category.topics[0]].map(topic => ({
+            name: topic.title,
+            path: topic.path
+          }))
+        },
+        {
+          title: 'Servicios fundamentales',
+          items: category.topics.slice(1, 3).map(topic => ({
+            name: topic.title,
+            path: topic.path
+          })),
+          highlighted: true
+        },
+        {
+          title: 'Datos e identidad',
+          items: category.topics.slice(3).map(topic => ({
+            name: topic.title,
+            path: topic.path
+          }))
+        }
+      ];
+    }
+    else {
+      return [
+        {
+          title: 'Costos y gobernanza',
+          items: category.topics.slice(0, 2).map(topic => ({
+            name: topic.title,
+            path: topic.path
+          })),
+          highlighted: true
+        },
+        {
+          title: 'Implementación y supervisión',
+          items: category.topics.slice(2).map(topic => ({
+            name: topic.title,
+            path: topic.path
+          }))
+        }
+      ];
+    }
+  };
+  
+  const modules = groupTopicsByModule();
 
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden">
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm hover:shadow transition-shadow">
       <button
-        className="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition-colors"
+        className="w-full flex justify-between items-center p-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
       >
         <div className="flex-1 text-left">
-          <h2 className="text-lg font-medium text-gray-900">{topic.title}</h2>
-          <p className="text-gray-600 text-sm mt-1">{topic.description}</p>
+          <div className="flex items-center">
+            <category.icon className="h-6 w-6 text-azure-600 dark:text-azure-400 mr-3" />
+            <div>
+              <h2 className="text-lg font-medium text-gray-900 dark:text-white">{category.title}</h2>
+              <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">{category.description}</p>
+            </div>
+          </div>
         </div>
-        {isOpen ? (
-          <ChevronUpIcon className="h-5 w-5 text-azure-600" />
-        ) : (
-          <ChevronDownIcon className="h-5 w-5 text-azure-600" />
-        )}
+        <div className="flex items-center">
+          <span className="text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 rounded-full px-3 py-1 mr-3">
+            {category.percentage}
+          </span>
+          {isOpen ? (
+            <ChevronUpIcon className="h-5 w-5 text-azure-600 dark:text-azure-400" />
+          ) : (
+            <ChevronDownIcon className="h-5 w-5 text-azure-600 dark:text-azure-400" />
+          )}
+        </div>
       </button>
 
       {isOpen && (
-        <div className="p-4 bg-gray-50 border-t border-gray-200">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {topic.modules.map((module, index) => (
-              <div
-                key={index}
-                className={`p-4 rounded-lg bg-white shadow-sm ${
-                  module.highlighted ? 'border-2 border-azure-400' : ''
-                }`}
-              >
-                <div className="flex justify-between items-start">
-                  <h3 className="text-md font-medium text-gray-900">{module.title}</h3>
-                  {module.link && (
-                    <Link
-                      to={module.link}
-                      className="flex items-center text-sm text-azure-600 hover:text-azure-800"
-                    >
-                      <BookOpenIcon className="h-4 w-4 mr-1" />
-                      Ver más
-                    </Link>
-                  )}
-                </div>
-                <ul className="mt-2 space-y-1">
-                  {module.items.map((item, idx) => (
-                    <li key={idx} className="text-gray-700 text-sm flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+      <div className="p-4 bg-gray-50 dark:bg-gray-800/80 border-t border-gray-200 dark:border-gray-700">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {modules.map((module, index) => (
+            <div
+              key={index}
+              className={`p-4 rounded-lg bg-white dark:bg-gray-800 shadow-sm ${
+                module.highlighted ? 'border-2 border-azure-400 dark:border-azure-500' : 'border border-gray-200 dark:border-gray-700'
+              }`}
+            >
+              <div className="flex justify-between items-start">
+                <h3 className="text-md font-medium text-gray-900 dark:text-white">{module.title}</h3>
               </div>
-            ))}
-          </div>
+              <ul className="mt-3 space-y-2">
+                {module.items.map((item, idx) => (
+                  <li key={idx} className="text-gray-700 dark:text-gray-300 text-sm">
+                    <Link 
+                      to={item.path} 
+                      className="flex items-start group"
+                    >
+                      <ArrowRightIcon className="h-4 w-4 text-azure-500 dark:text-azure-400 mr-2 mt-0.5 flex-shrink-0 transition-transform group-hover:translate-x-1" />
+                      <span className="group-hover:text-azure-700 dark:group-hover:text-azure-300 transition-colors">{item.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-      )}
+        
+        <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-center">
+          <Link 
+            to={`${category.path}`} 
+            className="inline-flex items-center text-azure-600 dark:text-azure-400 hover:text-azure-800 dark:hover:text-azure-300"
+          >
+            <BookOpenIcon className="h-4 w-4 mr-1" />
+            Ver todos los temas de {category.shortTitle}
+          </Link>
+        </div>
+      </div>
+    )}
     </div>
   );
 }

@@ -197,10 +197,10 @@ export default function Home() {
       </div>
 
       {/* CTA Final */}
-      <div className="mt-16 bg-gradient-to-r from-azure-500 to-azure-700 dark:from-azure-600 dark:to-azure-800 rounded-xl shadow-md p-8 text-white">
+      <div className="mt-16 bg-gradient-to-r from-azure-500 to-azure-700 dark:from-azure-600 dark:to-azure-800 rounded-xl shadow-md p-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">¿Listo para comenzar tu camino hacia la certificación?</h2>
-          <p className="mb-6">
+          <h2 className="text-2xl font-bold mb-4 text-white dark:text-white">¿Listo para comenzar tu camino hacia la certificación?</h2>
+          <p className="mb-6 text-white/90 dark:text-white">
             Nuestro material está diseñado para ayudarte a comprender y dominar los conceptos clave
             necesarios para aprobar el examen AZ-900 con confianza.
           </p>

@@ -10,7 +10,6 @@ import {
   BookOpenIcon,
   ChartBarIcon,
   ArrowPathIcon,
-  WrenchIcon,
   ComputerDesktopIcon,
   UserIcon,
   BuildingLibraryIcon

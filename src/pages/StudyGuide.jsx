@@ -100,22 +100,27 @@ function TopicAccordion({ category }) {
   
   // Agrupamos los temas por módulos basados en la estructura del examen
   const groupTopicsByModule = () => {
-    // Esta es una representación simplificada de cómo podrían agruparse los temas
-    // Se puede adaptar según sea necesario para la estructura específica
-    
     if (category.id === 'cloud-concepts') {
+      // Categoría 1: Descripción de los conceptos de la nube
       return [
         {
-          title: 'Conceptos fundamentales',
-          items: category.topics.slice(0, 6).map(topic => ({
+          title: 'Descripción de la informática en la nube',
+          items: category.topics.slice(0, 5).map(topic => ({  // what-is-cloud, shared-responsibility, cloud-models, consumption-model, serverless
             name: topic.title,
             path: topic.path
           })),
           highlighted: true
         },
         {
-          title: 'Ventajas y tipos de servicio',
-          items: category.topics.slice(6).map(topic => ({
+          title: 'Ventajas de usar servicios en la nube',
+          items: [category.topics.find(t => t.id === 'benefits')].filter(Boolean).map(topic => ({
+            name: topic.title,
+            path: topic.path
+          }))
+        },
+        {
+          title: 'Tipos de servicio en la nube',
+          items: [category.topics.find(t => t.id === 'service-types')].filter(Boolean).map(topic => ({
             name: topic.title,
             path: topic.path
           }))
@@ -123,25 +128,33 @@ function TopicAccordion({ category }) {
       ];
     } 
     else if (category.id === 'azure-architecture') {
+      // Categoría 2: Descripción de la arquitectura y servicios de Azure
       return [
         {
-          title: 'Componentes arquitectónicos',
-          items: [category.topics[0]].map(topic => ({
-            name: topic.title,
-            path: topic.path
-          }))
-        },
-        {
-          title: 'Servicios fundamentales',
-          items: category.topics.slice(1, 3).map(topic => ({
+          title: 'Componentes arquitectónicos principales',
+          items: category.topics.slice(0, 4).map(topic => ({  // componentes arquitectónicos
             name: topic.title,
             path: topic.path
           })),
           highlighted: true
         },
         {
-          title: 'Datos e identidad',
-          items: category.topics.slice(3).map(topic => ({
+          title: 'Servicios de proceso y redes',
+          items: category.topics.slice(4, 6).map(topic => ({  // compute, networking
+            name: topic.title,
+            path: topic.path
+          }))
+        },
+        {
+          title: 'Servicios de almacenamiento',
+          items: [category.topics.find(t => t.id === 'storage')].filter(Boolean).map(topic => ({
+            name: topic.title,
+            path: topic.path
+          }))
+        },
+        {
+          title: 'Identidad, acceso y seguridad',
+          items: [category.topics.find(t => t.id === 'identity-security')].filter(Boolean).map(topic => ({
             name: topic.title,
             path: topic.path
           }))
@@ -149,18 +162,33 @@ function TopicAccordion({ category }) {
       ];
     }
     else {
+      // Categoría 3: Administración y gobernanza de Azure
       return [
         {
-          title: 'Costos y gobernanza',
-          items: category.topics.slice(0, 2).map(topic => ({
+          title: 'Administración de costos',
+          items: [category.topics.find(t => t.id === 'cost-management')].filter(Boolean).map(topic => ({
             name: topic.title,
             path: topic.path
           })),
           highlighted: true
         },
         {
-          title: 'Implementación y supervisión',
-          items: category.topics.slice(2).map(topic => ({
+          title: 'Gobernanza y cumplimiento',
+          items: [category.topics.find(t => t.id === 'governance')].filter(Boolean).map(topic => ({
+            name: topic.title,
+            path: topic.path
+          }))
+        },
+        {
+          title: 'Administración e implementación',
+          items: [category.topics.find(t => t.id === 'resource-management')].filter(Boolean).map(topic => ({
+            name: topic.title,
+            path: topic.path
+          }))
+        },
+        {
+          title: 'Herramientas de supervisión',
+          items: [category.topics.find(t => t.id === 'monitoring')].filter(Boolean).map(topic => ({
             name: topic.title,
             path: topic.path
           }))

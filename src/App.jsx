@@ -31,6 +31,7 @@ import ConsumptionModel from './pages/cloud-concepts/ConsumptionModel';
 import Benefits from './pages/cloud-concepts/Benefits';
 import Serverless from './pages/cloud-concepts/Serverless';
 import ServiceTypes from './pages/cloud-concepts/ServiceTypes';
+import WhatIsAzure from './pages/azure-architecture/WhatIsAzure';
 
 function App() {
   return (
@@ -66,9 +67,9 @@ function App() {
                     .filter(topic => topic.id !== 'what-is-cloud')
                     .map(topic => (
                       <Route 
-                        key={topic.id}
-                        path={topic.id}
-                        element={<UnderConstruction />}
+                      key={topic.id}
+                      path={topic.id}
+                      element={<UnderConstruction />}
                       />
                     ))}
                 </Route>
@@ -76,6 +77,7 @@ function App() {
                 {/* Rutas dinámicas para Arquitectura de Azure (Categoría 2) */}
                 <Route path="/azure-architecture" element={<AzureArchitectureLayout />}>
                   <Route index element={<Navigate to="components" replace />} />
+                  <Route path="what-is-azure" element={<WhatIsAzure />} />
                   {examCategories[1].topics.map(topic => (
                     <Route 
                       key={topic.id}

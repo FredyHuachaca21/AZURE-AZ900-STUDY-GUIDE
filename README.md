@@ -1,12 +1,42 @@
-# React + Vite
+# GUIA DE ESTUDIOS AZ-900
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ESTRUCTURA DE DIRECTORIOS
+```
+/src
+├── App.jsx                   # Componente principal de la aplicación
+├── main.jsx                  # Punto de entrada de la aplicación
+├── index.css                 # Estilos globales
+├── components/               # Componentes reutilizables
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── LoadingSpinner.jsx
+│   └── UnderConstruction.jsx
+├── config/                   # Archivos de configuración
+│   └── navigationConfig.js
+├── layouts/                  # Layouts para las diferentes secciones
+│   ├── CloudConceptsLayout.jsx
+│   ├── AzureArchitectureLayout.jsx
+│   └── ManagementGovernanceLayout.jsx
+└── pages/                    # Páginas principales y de contenido
+    ├── Home.jsx
+    ├── StudyGuide.jsx
+    ├── ResponsibilityModel.jsx
+    ├── ExamSimulation.jsx
+    ├── ResourcesPage.jsx
+    ├── cloud-concepts/       # Carpeta para temas de Conceptos de la Nube
+    │   ├── WhatIsCloud.jsx   
+    │   ├── SharedResponsibility.jsx
+    │   ├── CloudModels.jsx
+    │   └── ...
+    ├── azure-architecture/   # Carpeta para temas de Arquitectura de Azure
+    │   ├── Components.jsx
+    │   ├── ComputeServices.jsx
+    │   └── ...
+    ├── management-governance/ # Carpeta para temas de Administración y Gobernanza
+    │   ├── CostManagement.jsx
+    │   └── ...
+    └── exam-simulation/      # Componentes relacionados con el simulador de examen
+        ├── CategoryOneExam.jsx
+        ├── CategoryTwoExam.jsx
+        └── CategoryThreeExam.jsx
+```

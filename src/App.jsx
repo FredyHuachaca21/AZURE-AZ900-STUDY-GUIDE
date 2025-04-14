@@ -28,6 +28,7 @@ import { examCategories } from './config/navigationConfig';
 import ResponsibilityModel from './pages/cloud-concepts/ResponsibilityModel';
 import CloudModels from './pages/cloud-concepts/CloudModels';
 import ConsumptionModel from './pages/cloud-concepts/ConsumptionModel';
+import Benefits from './pages/cloud-concepts/Benefits';
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
                   <Route path="shared-responsibility" element={<ResponsibilityModel />} />
                   <Route path="cloud-models" element={<CloudModels />} />
                   <Route path="consumption-model" element={<ConsumptionModel/>} />
+                  <Route path="benefits" element={<Benefits />} />
                   {examCategories[0].topics
                     .filter(topic => topic.id !== 'what-is-cloud')
                     .map(topic => (

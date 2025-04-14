@@ -4,10 +4,16 @@
   <meta charset="utf-8">
   <title>Redireccionando...</title>
   <script>
+    // Verifica si estamos en GitHub Pages (producción) o desarrollo local
+    const isProduction = window.location.hostname !== 'localhost' && 
+                         window.location.hostname !== '127.0.0.1';
+    
     // Almacena la URL actual en sessionStorage
     sessionStorage.setItem('redirectPath', window.location.pathname);
+    
     // Redirige a la página principal
-    window.location.href = '/AZURE-AZ900-STUDY-GUIDE/';
+    const basePath = isProduction ? '/AZURE-AZ900-STUDY-GUIDE/' : '/';
+    window.location.href = basePath;
   </script>
 </head>
 <body>

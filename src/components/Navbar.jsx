@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { mainNavigation } from '../config/navigationConfig';
 import ThemeSwitch from './ThemeSwitch';
+import azureLogo from '/azure-logo.svg';
+import viteLogo from '/vite.svg';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,11 +18,11 @@ export default function Navbar() {
             <div className="flex-shrink-0 flex items-center">
               <img 
                 className="h-10 w-auto"
-                src="/AZURE-AZ900-STUDY-GUIDE/azure-logo.svg" 
+                src={azureLogo} 
                 alt="Azure Logo"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = '/AZURE-AZ900-STUDY-GUIDE/vite.svg';
+                  e.target.src = viteLogo;
                 }}
               />
               <span className="ml-2 text-xl font-bold text-azure-700 dark:text-azure-400">AZ-900 Study Guide</span>

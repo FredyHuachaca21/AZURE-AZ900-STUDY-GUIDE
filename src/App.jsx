@@ -33,7 +33,7 @@ import Benefits from './pages/cloud-concepts/Benefits';
 function App() {
   return (
     <ThemeProvider>
-      <Router future={{ v7_startTransition: true }}>
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow container mx-auto px-4 py-8">

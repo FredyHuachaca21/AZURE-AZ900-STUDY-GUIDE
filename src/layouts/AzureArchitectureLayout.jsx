@@ -4,7 +4,10 @@ import { ChevronRightIcon, ServerIcon } from '@heroicons/react/24/outline';
 
 // Definición de enlaces de navegación para esta categoría
 const navLinks = [
-  { name: 'Componentes arquitectónicos', path: 'components' },
+  { name: '¿Qué es Microsoft Azure?', path: 'what-is-azure' },
+  { name: 'Cuentas de Azure', path: 'azure-accounts' },
+  { name: 'Infraestructura física de Azure', path: 'physical-infrastructure' },
+  { name: 'Infraestructura de administración', path: 'management-infrastructure' },
   { name: 'Servicios de proceso', path: 'compute' },
   { name: 'Servicios de red', path: 'networking' },
   { name: 'Servicios de almacenamiento', path: 'storage' },

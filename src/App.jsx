@@ -34,6 +34,7 @@ import ServiceTypes from './pages/cloud-concepts/ServiceTypes';
 import WhatIsAzure from './pages/azure-architecture/WhatIsAzure';
 import AzureAccounts from './pages/azure-architecture/AzureAccounts';
 import PhysicalInfrastructure from './pages/azure-architecture/PhysicalInfrastructure';
+import ManagementInfrastructure from './pages/azure-architecture/ManagementInfrastructure';
 
 function App() {
   return (
@@ -82,6 +83,7 @@ function App() {
                   <Route path="what-is-azure" element={<WhatIsAzure />} />
                   <Route path="azure-accounts" element={<AzureAccounts />} />
                   <Route path="physical-infrastructure" element={<PhysicalInfrastructure/>} />
+                  <Route path="management-infrastructure" element={<ManagementInfrastructure />} />
                   {examCategories[1].topics
                     .filter(topic => !['what-is-azure', 'azure-accounts'].includes(topic.id))
                     .map(topic => (

@@ -1,3 +1,5 @@
+// File: src/config/navigationConfig.js
+
 import { 
     CloudIcon, 
     ServerIcon, 

@@ -32,6 +32,7 @@ import Benefits from './pages/cloud-concepts/Benefits';
 import Serverless from './pages/cloud-concepts/Serverless';
 import ServiceTypes from './pages/cloud-concepts/ServiceTypes';
 import WhatIsAzure from './pages/azure-architecture/WhatIsAzure';
+import AzureAccounts from './pages/azure-architecture/AzureAccounts';
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
                 {/* Rutas principales de navegación */}
                 <Route path="/study-guide" element={<StudyGuide />} />
                 <Route path="/resources" element={<ResourcesPage />} />
-                ß
+                
                 {/* Rutas para Simulador de Examen */}
                 <Route path="/exam-simulation" element={<ExamSimulation />} />
                 <Route path="/exam-simulation/:category" element={<UnderConstruction />} />
@@ -78,13 +79,16 @@ function App() {
                 <Route path="/azure-architecture" element={<AzureArchitectureLayout />}>
                   <Route index element={<Navigate to="components" replace />} />
                   <Route path="what-is-azure" element={<WhatIsAzure />} />
-                  {examCategories[1].topics.map(topic => (
-                    <Route 
-                      key={topic.id}
-                      path={topic.id}
-                      element={<UnderConstruction />}
-                    />
-                  ))}
+                  <Route path="azure-accounts" element={<AzureAccounts />} />
+                  {examCategories[1].topics
+                    .filter(topic => !['what-is-azure', 'azure-accounts'].includes(topic.id))
+                    .map(topic => (
+                      <Route 
+                        key={topic.id}
+                        path={topic.id}
+                        element={<UnderConstruction />}
+                      />
+                    ))}
                 </Route>
                 
                 {/* Rutas dinámicas para Administración y Gobernanza (Categoría 3) */}

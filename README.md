@@ -40,3 +40,15 @@
         ├── CategoryTwoExam.jsx
         └── CategoryThreeExam.jsx
 ```
+
+## Despliegue con GitHub Actions
+
+Este proyecto está configurado para ser desplegado automáticamente en GitHub Pages utilizando GitHub Actions. Sigue estos pasos para habilitar el despliegue:
+
+1. Asegúrate de que el repositorio sea público o, si es privado, que tengas GitHub Pro.
+2. Ve a la configuración del repositorio (Settings).
+3. Navega a "Pages" en el menú lateral.
+4. En "Source", selecciona "GitHub Actions".
+5. Con estos pasos y los archivos de configuración ya incluidos en el repositorio, cada vez que hagas un push a la rama main, el sitio se construirá y desplegará automáticamente.
+
+La URL de tu sitio será: `https://[tu-usuario-github].github.io/azure-az900-study-guide/`

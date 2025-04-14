@@ -29,12 +29,6 @@ import {
       exact: true
     },
     { 
-      name: 'Modelo de Responsabilidad', 
-      path: '/responsibility-model', 
-      icon: ShieldCheckIcon,
-      exact: true
-    },
-    { 
       name: 'Guía de Estudio', 
       path: '/study-guide', 
       icon: AcademicCapIcon,

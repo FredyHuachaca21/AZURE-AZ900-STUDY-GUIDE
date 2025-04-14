@@ -9,7 +9,6 @@ import { ThemeProvider } from './contexts/ThemeContext';
 
 // Importaciones predeterminadas (carga normal)
 import Home from './pages/Home';
-import ResponsibilityModel from './pages/ResponsibilityModel';
 import StudyGuide from './pages/StudyGuide';
 
 // Layouts para categorías principales
@@ -26,6 +25,10 @@ import WhatIsCloud from './pages/cloud-concepts/WhatIsCloud';
 
 // Importar configuración de navegación
 import { examCategories } from './config/navigationConfig';
+import ResponsibilityModel from './pages/cloud-concepts/ResponsibilityModel';
+import CloudModels from './pages/cloud-concepts/CloudModels';
+import PricingModels from './pages/cloud-concepts/PricingModels';
+import ConsumptionModel from './pages/cloud-concepts/ConsumptionModel';
 
 function App() {
   return (
@@ -41,9 +44,8 @@ function App() {
                 
                 {/* Rutas principales de navegación */}
                 <Route path="/study-guide" element={<StudyGuide />} />
-                <Route path="/responsibility-model" element={<ResponsibilityModel />} />
                 <Route path="/resources" element={<ResourcesPage />} />
-                
+                ß
                 {/* Rutas para Simulador de Examen */}
                 <Route path="/exam-simulation" element={<ExamSimulation />} />
                 <Route path="/exam-simulation/:category" element={<UnderConstruction />} />
@@ -52,6 +54,10 @@ function App() {
                 <Route path="/cloud-concepts" element={<CloudConceptsLayout />}>
                   <Route index element={<Navigate to="what-is-cloud" replace />} />
                   <Route path="what-is-cloud" element={<WhatIsCloud />} />
+                  <Route path="shared-responsibility" element={<ResponsibilityModel />} />
+                  <Route path="cloud-models" element={<CloudModels />} />
+                  <Route path="consumption-model" element={<ConsumptionModel/>} />
+                  <Route path="consumption-model" element={<PricingModels />} />
                   {examCategories[0].topics
                     .filter(topic => topic.id !== 'what-is-cloud')
                     .map(topic => (

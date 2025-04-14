@@ -16,11 +16,11 @@ export default function Navbar() {
             <div className="flex-shrink-0 flex items-center">
               <img 
                 className="h-10 w-auto"
-                src="/azure-logo.svg" 
+                src="/AZURE-AZ900-STUDY-GUIDE/azure-logo.svg" 
                 alt="Azure Logo"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = '/vite.svg';
+                  e.target.src = '/AZURE-AZ900-STUDY-GUIDE/vite.svg';
                 }}
               />
               <span className="ml-2 text-xl font-bold text-azure-700 dark:text-azure-400">AZ-900 Study Guide</span>

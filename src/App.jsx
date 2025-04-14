@@ -30,6 +30,7 @@ import CloudModels from './pages/cloud-concepts/CloudModels';
 import ConsumptionModel from './pages/cloud-concepts/ConsumptionModel';
 import Benefits from './pages/cloud-concepts/Benefits';
 import Serverless from './pages/cloud-concepts/Serverless';
+import ServiceTypes from './pages/cloud-concepts/ServiceTypes';
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
                   <Route path="consumption-model" element={<ConsumptionModel/>} />
                   <Route path="serverless" element={<Serverless />} />
                   <Route path="benefits" element={<Benefits />} />
+                  <Route path="service-types" element={<ServiceTypes />} />
                   {examCategories[0].topics
                     .filter(topic => topic.id !== 'what-is-cloud')
                     .map(topic => (

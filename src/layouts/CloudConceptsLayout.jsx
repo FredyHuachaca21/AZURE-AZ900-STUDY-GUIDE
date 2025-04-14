@@ -8,7 +8,6 @@ const navLinks = [
   { name: 'Modelo de responsabilidad compartida', path: 'shared-responsibility' },
   { name: 'Modelos de nube', path: 'cloud-models' },
   { name: 'Modelo basado en el consumo', path: 'consumption-model' },
-  { name: 'Modelos de precios en la nube', path: 'pricing-models' },
   { name: 'Informática sin servidor', path: 'serverless' },
   { name: 'Ventajas de la nube', path: 'benefits' },
   { name: 'Tipos de servicio en la nube', path: 'service-types' }
